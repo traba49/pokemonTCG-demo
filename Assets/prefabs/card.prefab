@@ -112,11 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2aab8a64767944d8a1d83d5948f1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardname: {fileID: 8015597662871479791}
-  hp: {fileID: 7742247697482398954}
-  type: {fileID: 5829921473891118189}
-  ability: {fileID: 4093280737994867723}
-  attack: {fileID: 3337503739600557033}
   image: {fileID: 8543535896017422301}
 --- !u!1 &2680651146335042047
 GameObject:
@@ -457,7 +452,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 30, y: 30, z: 30, w: 30}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -940,7 +935,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 30, y: 30, z: 30, w: 30}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
