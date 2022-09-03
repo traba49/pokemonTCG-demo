@@ -10,7 +10,7 @@ public class loaddeckpref : MonoBehaviour
     private AudioSource source;
     private gotodeckbuilder gtdb;
     private cardhandler handler;
-    private TextMeshProUGUI text;
+    public TextMeshProUGUI text;
 
     private string[] decklist;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class loaddeckpref : MonoBehaviour
         source = FindObjectOfType<AudioSource>();
         gtdb = FindObjectOfType<gotodeckbuilder>();
         handler = FindObjectOfType<cardhandler>();
-        text = GetComponentInChildren<TextMeshProUGUI>();
+        //text = GetComponentInChildren<TextMeshProUGUI>();
 
         GetComponent<Button>().onClick.AddListener(gtdb.gotoscreen);
 
