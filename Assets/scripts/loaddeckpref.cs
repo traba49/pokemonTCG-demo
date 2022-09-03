@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class loaddeckpref : MonoBehaviour
 {
     private AudioSource source;
     private gotodeckbuilder gtdb;
     private cardhandler handler;
+    private TextMeshProUGUI text;
 
     private string[] decklist;
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class loaddeckpref : MonoBehaviour
         source = FindObjectOfType<AudioSource>();
         gtdb = FindObjectOfType<gotodeckbuilder>();
         handler = FindObjectOfType<cardhandler>();
+        text = GetComponentInChildren<TextMeshProUGUI>();
 
         GetComponent<Button>().onClick.AddListener(gtdb.gotoscreen);
 
@@ -36,8 +39,9 @@ public class loaddeckpref : MonoBehaviour
     }
 
     //get the deck
-    public void getdeck(string[] deck)
+    public void getdeck(string[] deck,string name)
     {
         decklist = deck;
+        text.text = name;
     }
 }

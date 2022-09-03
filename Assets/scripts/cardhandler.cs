@@ -87,6 +87,7 @@ public class cardhandler : MonoBehaviour
         {
             savedata data = new savedata();
             data.deckList = decklist;
+            data.deckname = savename.text;
             savingsystem.Savegame(data, savename.text);
         }
         else

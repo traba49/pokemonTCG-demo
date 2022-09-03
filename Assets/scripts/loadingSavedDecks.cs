@@ -27,7 +27,7 @@ public class loadingSavedDecks : MonoBehaviour
         {
             GameObject go = Instantiate(deckPref, decks);
             savedata data = savingsystem.Loadgame(s);
-            go.GetComponent<loaddeckpref>().getdeck(data.deckList);
+            go.GetComponent<loaddeckpref>().getdeck(data.deckList, data.deckname);
         }
     }
 

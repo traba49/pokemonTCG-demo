@@ -6,5 +6,5 @@ using UnityEngine;
 public class savedata 
 {
     public string[] deckList = new string[30];
-
+    public string deckname;
 }
