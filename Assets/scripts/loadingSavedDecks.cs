@@ -7,9 +7,14 @@ public class loadingSavedDecks : MonoBehaviour
 {
     [SerializeField] Transform decks;
     [SerializeField] GameObject deckPref;
-    // Start is called before the first frame update
-    //find all saved decks and spawn a button for each of them
+    // Start is called before the first frame update    
     void Start()
+    {
+        loaddecks();
+    }
+
+    //find all saved decks and spawn a button for each of them
+    public void loaddecks()
     {
         string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.testsave");
         foreach (string s in filePaths)
