@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class loadingSavedDecks : MonoBehaviour
+public class LoadingSavedDecks : MonoBehaviour
 {
     [SerializeField] Transform decks;
     [SerializeField] GameObject deckPref;
@@ -26,8 +26,8 @@ public class loadingSavedDecks : MonoBehaviour
         foreach (string s in filePaths)
         {
             GameObject go = Instantiate(deckPref, decks);
-            savedata data = savingsystem.Loadgame(s);
-            go.GetComponent<loaddeckpref>().getdeck(data.deckList, data.deckname);
+            SaveData data = SavingSystem.Loadgame(s);
+            go.GetComponent<LoadDeckPref>().getdeck(data.deckList, data.deckName);
         }
     }
 

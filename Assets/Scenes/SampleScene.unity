@@ -4568,8 +4568,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1252752945}
-        m_TargetAssemblyTypeName: cardhandler, Assembly-CSharp
-        m_MethodName: savedeck
+        m_TargetAssemblyTypeName: CardHandler, Assembly-CSharp
+        m_MethodName: SaveDeck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7225,9 +7225,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 1358982772}
-  cardpref: {fileID: 1603666204354687927, guid: 87ad9d17a89f8734c8f05cefab13b13e, type: 3}
-  savename: {fileID: 2037192422}
-  decklist:
+  cardPref: {fileID: 1603666204354687927, guid: 87ad9d17a89f8734c8f05cefab13b13e, type: 3}
+  saveName: {fileID: 2037192422}
+  deckList:
   - 
   - 
   - 
@@ -7298,8 +7298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400c027665672784fa69d844b93146ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deckselect: {fileID: 1628196692}
-  deckbuild: {fileID: 572146935}
+  deckSelect: {fileID: 1628196692}
+  deckBuild: {fileID: 572146935}
 --- !u!1 &1267035941
 GameObject:
   m_ObjectHideFlags: 0
@@ -9382,12 +9382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 709d32ebb4579d7488a889a3d0be7ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardpref: {fileID: 1603666204354687927, guid: 87ad9d17a89f8734c8f05cefab13b13e, type: 3}
-  cardname: {fileID: 552128915}
+  cardPref: {fileID: 0}
+  cardName: {fileID: 0}
   type: {fileID: 72198783}
   rarity: {fileID: 909208780}
-  minhealth: {fileID: 400411698}
-  maxhealth: {fileID: 167549787}
+  minHealth: {fileID: 0}
+  maxHealth: {fileID: 0}
 --- !u!114 &1578406329
 MonoBehaviour:
   m_ObjectHideFlags: 0

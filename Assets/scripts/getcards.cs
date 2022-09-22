@@ -6,14 +6,14 @@ using TMPro;
 using PokemonTcgSdk;
 using PokemonTcgSdk.Models;
 
-public class getcards : MonoBehaviour
+public class GetCards : MonoBehaviour
 {
-    [SerializeField] GameObject cardpref;
-    [SerializeField] TMP_InputField cardname;
+    [SerializeField] GameObject cardPref;
+    [SerializeField] TMP_InputField cardName;
     [SerializeField] TMP_Dropdown type;
     [SerializeField] TMP_Dropdown rarity;
-    [SerializeField] TMP_InputField minhealth;
-    [SerializeField] TMP_InputField maxhealth;
+    [SerializeField] TMP_InputField minHealth;
+    [SerializeField] TMP_InputField maxHealth;
     Pokemon card;
     Dictionary<string, string> list = new Dictionary<string, string>();
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class getcards : MonoBehaviour
     }
 
     //clear the card list
-    public void clearlist()
+    public void ClearList()
     {
         foreach (Transform child in transform)
         {
@@ -35,11 +35,11 @@ public class getcards : MonoBehaviour
     public void search()
     {
         list.Clear();
-        clearlist();
-        if (!string.IsNullOrEmpty(cardname.text))
+        ClearList();
+        if (!string.IsNullOrEmpty(cardName.text))
         {
             Debug.Log("got text");
-            list.Add("name", cardname.text);
+            list.Add("name", cardName.text);
         }
         if (type.options[type.value].text != null)
         {
@@ -49,9 +49,9 @@ public class getcards : MonoBehaviour
         {
             list.Add("rarity", rarity.options[rarity.value].text);
         }
-        if (!string.IsNullOrEmpty(minhealth.text) || !string.IsNullOrEmpty(maxhealth.text))
+        if (!string.IsNullOrEmpty(minHealth.text) || !string.IsNullOrEmpty(maxHealth.text))
         {
-            list.Add("hp", minhealth.text + "" + maxhealth.text);
+            list.Add("hp", minHealth.text + "" + maxHealth.text);
         }
         if (list.Count == 0)
         {
@@ -68,8 +68,8 @@ public class getcards : MonoBehaviour
         foreach (PokemonCard card in card.Cards)
         {
             Debug.Log(card.Name);
-            GameObject go = Instantiate(cardpref, transform);
-            go.GetComponent<cardpref>().getinfo(card);
+            GameObject go = Instantiate(cardPref, transform);
+            go.GetComponent<CardPref>().getinfo(card);
         }
     }
 }

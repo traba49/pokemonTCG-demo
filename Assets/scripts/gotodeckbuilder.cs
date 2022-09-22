@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
-public class gotodeckbuilder : MonoBehaviour
+public class GotoDeckBuilder : MonoBehaviour
 {
-    [SerializeField] CinemachineVirtualCamera deckselect;
-    [SerializeField] CinemachineVirtualCamera deckbuild;
+    [SerializeField] CinemachineVirtualCamera deckSelect;
+    [SerializeField] CinemachineVirtualCamera deckBuild;
 
     public void gotoscreen()
     {
-        deckbuild.Priority = 1;
-        deckselect.Priority = 0;
+        deckBuild.Priority = 1;
+        deckSelect.Priority = 0;
     }
 }

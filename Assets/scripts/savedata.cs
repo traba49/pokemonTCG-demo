@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class savedata 
+public class SaveData 
 {
     public string[] deckList = new string[30];
-    public string deckname;
+    public string deckName;
 }

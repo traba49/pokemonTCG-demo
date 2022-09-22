@@ -5,12 +5,12 @@ using PokemonTcgSdk;
 using PokemonTcgSdk.Models;
 using TMPro;
 
-public class cardhandler : MonoBehaviour
+public class CardHandler : MonoBehaviour
 {
     [SerializeField] Transform deck;
-    [SerializeField] GameObject cardpref;
-    [SerializeField] TMP_InputField savename;
-    [SerializeField] string[] decklist = new string[30];
+    [SerializeField] GameObject cardPref;
+    [SerializeField] TMP_InputField saveName;
+    [SerializeField] string[] deckList = new string[30];
     int i;
     Pokemon card;
     // Start is called before the first frame update
@@ -18,35 +18,35 @@ public class cardhandler : MonoBehaviour
     {
         i = 0;
     }
-    public async void loaddeck(string[] deckli)
+    public async void LoadDeck(string[] deckli)
     {
         
-        decklist = deckli;
-        for (int j=0; j < decklist.Length; j++)
+        deckList = deckli;
+        for (int j=0; j < deckList.Length; j++)
         {
-            if(!string.IsNullOrEmpty(decklist[j])) 
+            if(!string.IsNullOrEmpty(deckList[j])) 
             {
-                card = await Card.FindAsync<Pokemon>(decklist[j]);
+                card = await Card.FindAsync<Pokemon>(deckList[j]);
                 i = j; 
-                GameObject go = Instantiate(cardpref, deck);
-                go.GetComponent<cardpref>().getinfo(card.Card);
+                GameObject go = Instantiate(cardPref, deck);
+                go.GetComponent<CardPref>().getinfo(card.Card);
             }
 
         }
     }
 
     // add a card to the deck
-    public void addcard(PokemonCard card)
+    public void AddCard(PokemonCard card)
     {
-        if (string.IsNullOrEmpty(decklist[i]))
+        if (string.IsNullOrEmpty(deckList[i]))
         {
-            GameObject go = Instantiate(cardpref, deck);
-            go.GetComponent<cardpref>().getinfo(card);
-            decklist[i] = card.Id;
+            GameObject go = Instantiate(cardPref, deck);
+            go.GetComponent<CardPref>().getinfo(card);
+            deckList[i] = card.Id;
             do
             {
                 i++;
-            }while (!string.IsNullOrEmpty(decklist[i]) && i < decklist.Length);
+            }while (!string.IsNullOrEmpty(deckList[i]) && i < deckList.Length);
         }
         else
         {
@@ -55,13 +55,13 @@ public class cardhandler : MonoBehaviour
         
     }
 
-    public void removecard(GameObject card, string id)
+    public void RemoveCard(GameObject card, string id)
     {
-        for (int j = 0; j <= decklist.Length; j++)
+        for (int j = 0; j <= deckList.Length; j++)
         {
-            if(id == decklist[j]) 
+            if(id == deckList[j]) 
             { 
-                decklist[j] = null; 
+                deckList[j] = null; 
                 i = j;
                 break;
             }
@@ -69,11 +69,11 @@ public class cardhandler : MonoBehaviour
         Destroy(card);
     }
 
-    public void cleardeck()
+    public void ClearDeck()
     {
-        for (int j = 0; j <= decklist.Length; j++)
+        for (int j = 0; j <= deckList.Length; j++)
         {
-            decklist[j] = null;
+            deckList[j] = null;
         }
         foreach (Transform child in transform)
         {
@@ -81,14 +81,14 @@ public class cardhandler : MonoBehaviour
         }
     }
 
-    public void savedeck()
+    public void SaveDeck()
     {
-        if (!string.IsNullOrEmpty(savename.text))
+        if (!string.IsNullOrEmpty(saveName.text))
         {
-            savedata data = new savedata();
-            data.deckList = decklist;
-            data.deckname = savename.text;
-            savingsystem.Savegame(data, savename.text);
+            SaveData data = new SaveData();
+            data.deckList = deckList;
+            data.deckName = saveName.text;
+            SavingSystem.Savegame(data, saveName.text);
         }
         else
         {

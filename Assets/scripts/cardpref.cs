@@ -7,19 +7,19 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEngine.EventSystems;
 
-public class cardpref : MonoBehaviour
+public class CardPref : MonoBehaviour
 {
     [SerializeField] Image image;
 
     private PokemonCard card;
-    private showHighResCard highRes;
-    private cardhandler deck;
+    private ShowHighResCard highRes;
+    private CardHandler deck;
     private AudioSource source;
     // Start is called before the first frame update
     private void Start()
     {
-        highRes = FindObjectOfType<showHighResCard>();
-        deck = FindObjectOfType<cardhandler>();
+        highRes = FindObjectOfType<ShowHighResCard>();
+        deck = FindObjectOfType<CardHandler>();
         source = FindObjectOfType<AudioSource>();
 
         //event trigger setup
@@ -36,11 +36,11 @@ public class cardpref : MonoBehaviour
     {
         if (transform.parent.CompareTag("list"))
         {
-            deck.addcard(card);
+            deck.AddCard(card);
         }
         else if (transform.parent.CompareTag("deck"))
         {
-            deck.removecard(gameObject,card.Id);
+            deck.RemoveCard(gameObject,card.Id);
         }
         else
         {
@@ -50,13 +50,13 @@ public class cardpref : MonoBehaviour
     }
 
     //display and hide the card's High resolution image
-    public void sendimage()
+    public void Sendimage()
     {
-        highRes.showimage(card);
+        highRes.ShowImage(card);
     }
-    public void hideImage()
+    public void HideImage()
     {
-        highRes.hideimage();
+        highRes.HideImage();
     }
 
     // get the card's information and display it

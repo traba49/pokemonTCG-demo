@@ -5,16 +5,16 @@ using PokemonTcgSdk.Models;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class showHighResCard : MonoBehaviour
+public class ShowHighResCard : MonoBehaviour
 {
     [SerializeField] Image image;
 
-    public void showimage(PokemonCard info)
+    public void ShowImage(PokemonCard info)
     {
         StartCoroutine(GetRequest(info.ImageUrlHiRes));
     }
 
-    public void hideimage()
+    public void HideImage()
     {
         image.sprite = null;
     }
